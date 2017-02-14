@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Django Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/login.css" />
+</head>
+
+<body class=" login" data-admin-utc-offset="28800">
+    <div id="container">
+    <!-- Header -->
+    <div id="header">
+        <div id="branding"><h1 id="site-name"><a href="/index/">发布会签到系统</a></h1></div>
+    </div>
+    <!-- END Header -->
+    <!-- Content -->
+    <div id="content" class="colM">
+    <div id="content-main">
+    <form method="post" action="/login_action/" id="login-form">
+        <div class="form-row">
+            <label class="required" for="username">帐号:</label> <input id="username" maxlength="254" name="username" type="text" />
+        </div>
+        <div class="form-row">
+            <label class="required" for="password">密码:</label> <input id="password" name="password" type="password" />
+        </div>
+        {{ error }}<br>
+        <div class="submit-row">
+            <label>&nbsp;</label><input type="submit" value="登 录" />
+        </div>
+        {% csrf_token %}
+    </form>
+    </div>
+</div>
+</div>
+</body>
+</html>
